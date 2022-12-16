@@ -1,5 +1,5 @@
 import styles from './Main.module.css';
-import igniteLogo from '../assets/toDoLogo.svg';
+import clipboard from '../assets/Clipboard.svg';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { ListItem } from './ListItem';
 import { Plus } from 'phosphor-react';
@@ -51,6 +51,7 @@ export function Main() {
                     </div>
                 </header>
                 {
+                    toDoItems.length > 0 ?
                     toDoItems.map(item => {
                         return(
                             <ListItem
@@ -63,7 +64,12 @@ export function Main() {
                             />
                             
                         )
-                    })
+                    }) : 
+                    <div className={styles.emptyList}>
+                        <img src={clipboard} alt="" className="" />
+                        <p><strong>Você ainda não tem tarefas cadastradas</strong></p>
+                        <p>Crie tarefas e organize seus itens a fazer</p>
+                    </div>
                 }
             </div>
         </main>
