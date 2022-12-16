@@ -1,0 +1,36 @@
+.listItem{
+    margin-top:12px;
+    display:grid;
+    grid-template-columns: 2rem 1fr 1rem;
+    border: 0;
+    border-radius: 8px;
+    color: var(--gray-100);
+    background-color: var(--gray-500);
+    padding: 1rem;
+}
+.listItem input[type=checkbox]{
+    appearance: none;
+    flex-shrink: 0;
+    width: 1.4rem;
+    height: 1.4rem;
+
+    border:1px solid var(--blue);
+    border-radius:50%;
+    position:relative;
+}
+.listItem input[type=checkbox]:checked::before{
+    content: "✓";
+    position:absolute;
+    top:0;
+    left:0.25rem;
+    color:var(--gray-100)
+}
+.listItem input[type=checkbox]:checked{
+    
+    background-color: var(--purple-dark);
+    border:0;
+}
+.done{
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
